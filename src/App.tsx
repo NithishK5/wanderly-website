@@ -1,11 +1,13 @@
 import React from "react";
-import ThreeScene from "./components/ThreeScene";
+import GlobalStyles from "./components/GlobalStyles";
+import Layout from "./components/Layout";
 
 const App = () => {
   return (
-    <div style={{ margin: 0, padding: 0, overflow: "hidden" }}>
-      <ThreeScene />
-    </div>
+    <>
+      <GlobalStyles />
+      <Layout />
+    </>
   );
 };
 
