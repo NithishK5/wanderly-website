@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { useNavigate, BrowserRouter } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamBurgerMenu";
 
 const Page = styled.div`
@@ -288,22 +288,22 @@ const FAQScreen = () => {
   );
 
   const images = [
-    "/wanderly-website/src/assets/faq/Coffee.png",
-    "/wanderly-website/src/assets/faq/Concerts.png",
-    "/wanderly-website/src/assets/faq/Cultural.png",
-    "/wanderly-website/src/assets/faq/Events.png",
-    "/wanderly-website/src/assets/faq/Fitness.png",
-    "/wanderly-website/src/assets/faq/Games.png",
-    "/wanderly-website/src/assets/faq/Mindfulness.png",
-    "/wanderly-website/src/assets/faq/Movie.png",
-    "/wanderly-website/src/assets/faq/Nightlife.png",
-    "/wanderly-website/src/assets/faq/Outdoor.png",
-    "/wanderly-website/src/assets/faq/Restaurants.png",
-    "/wanderly-website/src/assets/faq/Shopping.png",
-    "/wanderly-website/src/assets/faq/Sports.png",
-    "/wanderly-website/src/assets/faq/Tech.png",
-    "/wanderly-website/src/assets/faq/Volunteering.png",
-    "/wanderly-website/src/assets/faq/Workshops.png",
+    "./assets/faq/Coffee.png",
+    "./assets/faq/Concerts.png",
+    "./assets/faq/Cultural.png",
+    "./assets/faq/Events.png",
+    "./assets/faq/Fitness.png",
+    "./assets/faq/Games.png",
+    "./assets/faq/Mindfulness.png",
+    "./assets/faq/Movie.png",
+    "./assets/faq/Nightlife.png",
+    "./assets/faq/Outdoor.png",
+    "./assets/faq/Restaurants.png",
+    "./assets/faq/Shopping.png",
+    "./assets/faq/Sports.png",
+    "./assets/faq/Tech.png",
+    "./assets/faq/Volunteering.png",
+    "./assets/faq/Workshops.png",
   ];
 
   const faqs = [
@@ -377,7 +377,7 @@ const FAQScreen = () => {
     <Page>
       <HamburgerMenu />
       <Logo
-        src="/wanderly-website/src/assets/wanderly1.png"
+        src="./assets/wanderly1.png"
         alt="Wanderly Logo"
         onClick={() => navigate("/")}
       />

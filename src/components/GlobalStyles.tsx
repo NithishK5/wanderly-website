@@ -3,35 +3,35 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: 'Montserrat';
-  src: url('/src/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: 400; /* Regular */
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/src/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
   font-style: normal;
   font-weight: 600; /* SemiBold */
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/src/assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 500; /* Medium */
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/src/assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: 700; /* Bold */
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/src/assets/fonts/Montserrat-Italic.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Italic.ttf') format('truetype');
   font-style: italic;
   font-weight: 400; /* Regular Italic */
 }
