@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, BrowserRouter } from "react-router-dom";
 import HamburgerMenu from "./HamBurgerMenu";
 
 const Page = styled.div`
@@ -288,22 +288,22 @@ const FAQScreen = () => {
   );
 
   const images = [
-    "/src/assets/faq/Coffee.png",
-    "/src/assets/faq/Concerts.png",
-    "/src/assets/faq/Cultural.png",
-    "/src/assets/faq/Events.png",
-    "/src/assets/faq/Fitness.png",
-    "/src/assets/faq/Games.png",
-    "/src/assets/faq/Mindfulness.png",
-    "/src/assets/faq/Movie.png",
-    "/src/assets/faq/Nightlife.png",
-    "/src/assets/faq/Outdoor.png",
-    "/src/assets/faq/Restaurants.png",
-    "/src/assets/faq/Shopping.png",
-    "/src/assets/faq/Sports.png",
-    "/src/assets/faq/Tech.png",
-    "/src/assets/faq/Volunteering.png",
-    "/src/assets/faq/Workshops.png",
+    "/wanderly-website/src/assets/faq/Coffee.png",
+    "/wanderly-website/src/assets/faq/Concerts.png",
+    "/wanderly-website/src/assets/faq/Cultural.png",
+    "/wanderly-website/src/assets/faq/Events.png",
+    "/wanderly-website/src/assets/faq/Fitness.png",
+    "/wanderly-website/src/assets/faq/Games.png",
+    "/wanderly-website/src/assets/faq/Mindfulness.png",
+    "/wanderly-website/src/assets/faq/Movie.png",
+    "/wanderly-website/src/assets/faq/Nightlife.png",
+    "/wanderly-website/src/assets/faq/Outdoor.png",
+    "/wanderly-website/src/assets/faq/Restaurants.png",
+    "/wanderly-website/src/assets/faq/Shopping.png",
+    "/wanderly-website/src/assets/faq/Sports.png",
+    "/wanderly-website/src/assets/faq/Tech.png",
+    "/wanderly-website/src/assets/faq/Volunteering.png",
+    "/wanderly-website/src/assets/faq/Workshops.png",
   ];
 
   const faqs = [
@@ -377,7 +377,7 @@ const FAQScreen = () => {
     <Page>
       <HamburgerMenu />
       <Logo
-        src="/src/assets/wanderly1.png"
+        src="/wanderly-website/src/assets/wanderly1.png"
         alt="Wanderly Logo"
         onClick={() => navigate("/")}
       />

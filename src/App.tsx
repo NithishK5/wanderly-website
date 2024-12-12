@@ -21,7 +21,7 @@ import FAQScreen from "./components/FAQScreen"; // Create this new file
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/wanderly-website">
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<Layout />} />
