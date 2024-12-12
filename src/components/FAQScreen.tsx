@@ -236,6 +236,9 @@ const Footer = styled.div`
 
 const FooterText = styled.span`
   opacity: 0.8; /* Slight transparency */
+  @media (max-width: 768px) {
+    display: none; /* Hide on smaller screens */
+  }
 `;
 
 const FooterButtons = styled.div`
@@ -433,7 +436,12 @@ const FAQScreen = () => {
           <FooterButton isActive={true} onClick={() => navigate("/faq")}>
             FAQ
           </FooterButton>
-          <FooterButton onClick={() => alert("DM Functionality Coming Soon")}>
+          <FooterButton
+            onClick={() => {
+              window.location.href =
+                "mailto:your-email@example.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly.";
+            }}
+          >
             DM US
           </FooterButton>
           <FooterButton onClick={() => navigate("/")}>HOME</FooterButton>

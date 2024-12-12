@@ -13,17 +13,18 @@ const slideUp = keyframes`
 `;
 
 const HamburgerButton = styled.div`
-  position: absolute;
-  top: 4%;
-  left: 4%;
+  position: fixed; /* Fix it to the viewport */
+  top: 5%; /* Align with the top */
+  left: 4%; /* Align with the left */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 6px;
-  z-index: 10;
+  z-index: 1001; /* Ensure it stays above other elements, including the Wanderly logo */
 
+  /* Hide on larger screens */
   @media (min-width: 769px) {
     display: none;
   }
@@ -157,7 +158,15 @@ const HamburgerMenu = () => {
             >
               FAQ
             </MenuButton>
-            <MenuButton className="dm-us">DM US</MenuButton>
+            <MenuButton
+              className="dm-us"
+              onClick={() => {
+                window.location.href =
+                  "mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly.";
+              }}
+            >
+              DM US
+            </MenuButton>
             <FooterText>Wanderly - All Rights Reserved</FooterText>
           </MenuContent>
         </Overlay>

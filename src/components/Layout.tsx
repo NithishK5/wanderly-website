@@ -377,7 +377,15 @@ const Layout = () => {
             <div>#coming soon</div>
             <div>not a dating app</div>
             {/* Add buttons inside the menu for mobile */}
-            <MenuButton className="dm-us">DM US</MenuButton>
+            <MenuButton
+              className="dm-us"
+              onClick={() => {
+                window.location.href =
+                  "mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly.";
+              }}
+            >
+              DM US
+            </MenuButton>
             <MenuButton
               className="faq"
               onClick={() => {
@@ -433,7 +441,14 @@ const Layout = () => {
         >
           FAQ
         </Button>
-        <Button>DM US</Button>
+        <Button
+          onClick={() => {
+            window.location.href =
+              "mailto:your-email@example.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly.";
+          }}
+        >
+          DM US
+        </Button>
       </ButtonContainer>
     </Page>
   );
