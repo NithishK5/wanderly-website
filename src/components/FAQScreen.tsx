@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
+import HamburgerMenu from "./HamBurgerMenu";
 
 const Page = styled.div`
   position: relative;
@@ -241,11 +242,15 @@ const FooterButtons = styled.div`
   position: absolute;
   top: -10%; /* Center vertically */
   left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust to exact center */
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-around; /* Distribute buttons with space */
-  width: 100%; /* Full width */
+  width: 100%;
   max-width: 600px; /* Limit max width for layout */
+
+  @media (max-width: 768px) {
+    display: none; /* Hide on smaller screens */
+  }
 `;
 
 const FooterButton = styled.button<{ isActive?: boolean }>`
@@ -367,6 +372,7 @@ const FAQScreen = () => {
 
   return (
     <Page>
+      <HamburgerMenu />
       <Logo
         src="/src/assets/wanderly1.png"
         alt="Wanderly Logo"
