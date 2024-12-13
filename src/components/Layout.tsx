@@ -510,8 +510,6 @@ const Page = styled.div`
 
   /* Add a max-width for larger screens if needed */
   @media (min-width: 1440px) {
-    max-width: 1600px; /* Center content on ultra-wide monitors */
-    margin: 0 auto;
   }
 `;
 
