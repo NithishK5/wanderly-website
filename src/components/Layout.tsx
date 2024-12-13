@@ -28,10 +28,12 @@ const slideUp = keyframes`
 `;
 
 const Page = styled.div`
-  position: relative;
+  position: relative; /* Add this to make the Arrow align correctly */
   height: 100vh;
   width: 100vw;
-  background: #060606; /* Background color */
+  background: #060606;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: hidden; /* Prevent horizontal scrolling */
 `;
 
 const Line = styled.div`
@@ -105,9 +107,9 @@ const Arrow = styled.div`
   width: 20px;
   height: 2px;
   background: #d6d6d6; /* Arrow color */
-  position: relative;
-  top: 783px;
-  left: 1270px;
+  position: absolute; /* Changed from relative to absolute */
+  bottom: 4.5%; /* Align relative to parent */
+  right: 15%; /* Align relative to parent */
 
   &:after {
     content: "";

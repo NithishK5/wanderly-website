@@ -37,18 +37,21 @@ const GlobalStyles = createGlobalStyle`
 }
 
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', Arial, sans-serif; /* Use Montserrat as the default font */
-    background: #000; /* Full black background */
-    color: white; /* Optional: Set text color to white for readability */
-    overflow: hidden;
-  }
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden; /* Prevents horizontal scrollbars */
+  overflow-y: auto; /* Allows vertical scrolling */
+}
 
-  * {
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 `;
 
 export default GlobalStyles;
