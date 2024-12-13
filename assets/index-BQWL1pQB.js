@@ -604,16 +604,16 @@ PERFORMANCE OF THIS SOFTWARE.
   height: 100%;
   color: #d6d6d6;
   font-family: "Trebuchet MS", sans-serif;
-  font-size: clamp(20px, 5vw, 50px); /* Responsive font size */
+  font-size: clamp(35px, 5vw, 50px); /* Responsive font size */
   font-style: italic;
-  backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+  backdrop-filter: blur(0.1px); /* Adds a frosted glass effect */
   text-align: center; /* Center text for better readability */
   padding: 10px; /* Add padding for smaller screens */
 `,MenuButton$1=dt.button`
   position: absolute;
   bottom: clamp(2%, 5vh, 5%); /* Responsive vertical position */
   font-family: "Trebuchet MS", sans-serif;
-  font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
+  font-size: clamp(25px, 2vw, 30px); /* Responsive font size */
   color: #d6d6d6; /* Text color */
   background: none;
   border: none;
@@ -629,19 +629,30 @@ PERFORMANCE OF THIS SOFTWARE.
   /* Position FAQ to the right */
   &.faq {
     right: clamp(2%, 5vw, 5%); /* Responsive horizontal position */
+    bottom: clamp(7%, 5vw, 15%);
   }
 
   /* Position DM US to the left */
   &.dm-us {
     left: clamp(2%, 5vw, 5%); /* Responsive horizontal position */
+    bottom: clamp(7%, 5vw, 15%);
   }
 `,MenuLogo=dt.img`
   position: absolute;
-  top: clamp(-2%, -1.5%, 2%); /* Responsive top position */
-  right: clamp(-3%, -2.5%, 3%); /* Responsive right position */
-  width: clamp(200px, 25vw, 400px); /* Responsive width */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 15; /* Ensure it appears above other elements */
+  top: clamp(3%, 5vh, 8%); /* Match top position with AppNameImage */
+  right: clamp(0.5%, 1vw, 2%); /* Match right position with AppNameImage */
+  transform: translateY(-50%); /* Center the image vertically */
+  width: clamp(
+    300px,
+    25vw,
+    770px
+  ); /* Match responsive width with AppNameImage */
+  height: clamp(
+    100px,
+    15vw,
+    300px
+  ); /* Match responsive height with AppNameImage */
+  z-index: 15; /* Keep above other elements */
 `,PlusIcon=dt.div`
   position: absolute;
   color: #565658; /* Icon color */
