@@ -498,87 +498,44 @@ const slideUp = keyframes`
 
 const Page = styled.div`
   position: relative;
-  height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height for better mobile support */
+  min-height: -webkit-fill-available; /* Fix for mobile Safari */
   width: 100vw;
   background: #060606;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden; /* Prevent any scrolling */
 
-  /* Adjust padding for smaller screens */
+  /* Add padding or adjust spacing for smaller screens */
   @media (max-width: 768px) {
-    padding: 0px;
+  }
+
+  /* Add a max-width for larger screens if needed */
+  @media (min-width: 1440px) {
+    max-width: 1600px; /* Center content on ultra-wide monitors */
+    margin: 0 auto;
   }
 `;
 
 const Line = styled.div`
   position: absolute;
   background: #565658; /* Line color */
-  z-index: 1; /* Ensure the lines are visible above background elements */
 `;
 
 const HorizontalLine = styled(Line)`
-  height: 0.5px;
-  width: 100%;
-  top: 50%; /* Center the horizontal line */
-  transform: translateY(-50%); /* Adjust for proper centering */
-
-  @media (max-width: 768px) {
-    width: 100%; /* Keep full width for smaller screens */
-    top: 50%;
-  }
-`;
-
-const HorizontalLine2 = styled(Line)`
-  height: 0.5px;
-  width: 100%;
-  top: 90%; /* Center the horizontal line */
-  transform: translateY(-50%); /* Adjust for proper centering */
-
-  @media (max-width: 768px) {
-    width: 100%; /* Keep full width for smaller screens */
-    top: 90%;
-  }
-`;
-
-const FirstVerticalLine = styled(Line)`
-  width: 0.5px;
-  height: 88%; /* Default height */
-  top: 13%; /* Position 5% from the top */
-  left: 25%; /* Offset to the left for spacing */
-  transform: translateX(-50%); /* Adjust for proper centering */
-
-  @media (max-width: 768px) {
-    height: 100%; /* Extend to full height for smaller screens */
-    top: 0; /* Align to the very top */
-    left: 20%; /* Adjust for smaller screens */
-  }
-`;
-
-const VerticalLine = styled(Line)`
-  width: 0.5px;
-  height: 90%; /* Spans between top and bottom lines */
-  top: 5%; /* Align the vertical line */
-  left: 50%; /* Center the vertical line */
-  transform: translateX(-50%); /* Adjust for proper centering */
-
-  @media (max-width: 768px) {
-    height: 100%; /* Extend to full height for smaller screens */
-    top: 0; /* Align to the very top */
-  }
+  height: clamp(0.5px, 0.3vh, 0.1px); /* Dynamic height */
+  width: 100%; /* Full width */
 `;
 
 const AppNameImage = styled.img`
   position: absolute;
-  top: -1%;
-  right: -0.8%;
-  width: 30vw; /* Adjust width relative to viewport */
-  max-width: 470px; /* Limit the max size */
-  height: auto; /* Maintain aspect ratio */
+  top: clamp(3%, 5vh, 8%); /* Responsive top position */
+  right: clamp(0.5%, 1vw, 2%); /* Responsive right position */
+  transform: translateY(-50%); /* Center the image vertically */
+  width: clamp(300px, 25vw, 770px); /* Responsive width */
+  height: clamp(100px, 15vw, 300px); /* Responsive height */
 
-  @media (max-width: 768px) {
-    top: -1.5%;
-    right: -2%;
-    width: 100vw; /* Smaller width for smaller screens */
+  @media (min-width: 1024px) {
+    width: clamp(500px, 30vw, 1200px); /* Adjust width for larger screens */
+    height: clamp(100px, 30vw, 150px); /* Adjust height for larger screens */
   }
 `;
 
@@ -712,17 +669,16 @@ const CloseIcon = styled.div`
   }
 `;
 
-// Update HamburgerButton to use the CloseIcon
 const HamburgerButton = styled.div`
   position: absolute;
-  top: 4%;
-  left: 4%;
+  top: clamp(2%, 4vh, 4%); /* Responsive vertical position */
+  left: clamp(2%, 4vw, 4%); /* Responsive horizontal position */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: clamp(4px, 1vh, 6px); /* Responsive gap */
   z-index: 10;
 
   /* Hide on larger screens */
@@ -731,7 +687,6 @@ const HamburgerButton = styled.div`
   }
 `;
 
-/* Example for Overlay responsiveness */
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -739,9 +694,11 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9;
-  background-image: url(${menuBg});
+  background: rgba(0, 0, 0, 1);
+  background-image: url(${menuBg}); /* Use the imported image */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat; /* Ensure no tiling */
   animation: ${({ animationState }) =>
       animationState === "open" ? slideDown : slideUp}
     0.5s forwards;
@@ -759,21 +716,23 @@ const MenuContent = styled.div`
   height: 100%;
   color: #d6d6d6;
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 50px;
+  font-size: clamp(20px, 5vw, 50px); /* Responsive font size */
   font-style: italic;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+  text-align: center; /* Center text for better readability */
+  padding: 10px; /* Add padding for smaller screens */
 `;
 
 const MenuButton = styled.button`
   position: absolute;
-  bottom: 5%; /* Adjust the vertical position */
+  bottom: clamp(2%, 5vh, 5%); /* Responsive vertical position */
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
   color: #d6d6d6; /* Text color */
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px 0; /* Vertical padding */
+  padding: clamp(2px, 0.5vh, 5px) 0; /* Responsive vertical padding */
 
   &:hover {
     color: #d18bf5; /* Hover color */
@@ -783,28 +742,28 @@ const MenuButton = styled.button`
 
   /* Position FAQ to the right */
   &.faq {
-    right: 5%; /* Adjust the horizontal position for FAQ */
+    right: clamp(2%, 5vw, 5%); /* Responsive horizontal position */
   }
 
   /* Position DM US to the left */
   &.dm-us {
-    left: 5%; /* Adjust the horizontal position for DM US */
+    left: clamp(2%, 5vw, 5%); /* Responsive horizontal position */
   }
 `;
 
 const MenuLogo = styled.img`
   position: absolute;
-  top: -1.5%; /* Position the logo at the top */
-  right: -2.5%; /* Align to the top-right */
-  width: 400px; /* Adjust the width as needed */
-  height: auto; /* Maintain the aspect ratio */
+  top: clamp(-2%, -1.5%, 2%); /* Responsive top position */
+  right: clamp(-3%, -2.5%, 3%); /* Responsive right position */
+  width: clamp(200px, 25vw, 400px); /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
   z-index: 15; /* Ensure it appears above other elements */
 `;
 
 const PlusIcon = styled.div`
   position: absolute;
   color: #565658; /* Icon color */
-  font-size: 20px; /* Adjust the size of the icon */
+  font-size: clamp(16px, 4vw, 20px); /* Responsive font size */
 
   /* Hide by default and show only on smaller screens */
   display: none;
@@ -813,14 +772,14 @@ const PlusIcon = styled.div`
   }
 
   &.left {
-    top: 95%; /* Vertically center */
-    left: 35px; /* Position on the very left */
+    top: 95%; /* Vertical position */
+    left: clamp(20px, 5vw, 35px); /* Responsive left position */
     transform: translateY(-50%);
   }
 
   &.right {
-    top: 95%; /* Vertically center */
-    right: 35px; /* Position on the very right */
+    top: 95%; /* Vertical position */
+    right: clamp(20px, 5vw, 35px); /* Responsive right position */
     transform: translateY(-50%);
   }
 `;
@@ -837,30 +796,74 @@ const FooterText = styled.div`
   font-style: normal; /* Ensure the text is not italic */
 `;
 
+const LeftLine = styled(Line)`
+  width: 0.1vw; /* Line thickness relative to the viewport width */
+  height: 100%; /* Matches the height of the CenteredContainer */
+  position: absolute;
+  top: 0;
+  left: 3%; /* Position as a percentage of the viewport width */
+  transform: translateX(-100%); /* Ensure it sticks to the left side */
+
+  @media (max-width: 768px) {
+    left: 18%; /* Adjust the position for smaller screens */
+  }
+
+  @media (min-width: 1440px) {
+    left: 35%; /* Adjust for ultra-wide screens */
+    top: 13%;
+  }
+`;
+
+const RightLine = styled(Line)`
+  width: 0.1vw; /* Line thickness relative to the viewport width */
+  height: 100%; /* Matches the height of the CenteredContainer */
+  position: absolute;
+  top: 0;
+  right: 3%; /* Position as a percentage of the viewport width */
+  transform: translateX(100%); /* Ensure it sticks to the right side */
+
+  @media (max-width: 768px) {
+    right: clamp(15%, 18vw, 18%); /* Ensure dynamic scaling */
+    top: clamp(10%, 13vh, 13%); /* Keep top position responsive */
+  }
+
+  @media (min-width: 1440px) {
+    right: clamp(15%, 35vw, 35%);
+    top: clamp(10%, 13vh, 13%); /* Keep top position responsive */
+  }
+`;
+
 const CenteredContainer = styled.div`
   position: absolute;
-  top: 51.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Ensure perfect centering */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: clamp(60%, 80vw, 90%); /* Mobile-first width */
+  height: clamp(50%, 70vh, 100%); /* Mobile-first height */
 
-  @media (max-width: 768px) {
-    top: 51.5%; /* Adjust for better positioning */
+  @media (min-width: 1440px) {
+    width: clamp(30%, 40vw, 50%); /* Adjust width for ultra-wide screens */
+    height: 100%; /* Keep full height */
   }
 `;
 
 const CenteredImage = styled.img`
-  width: 30vw; /* Responsive width */
-  max-width: 380px; /* Limit maximum size */
-  height: 40vw; /* Maintain aspect ratio */
-  border-radius: 1rem;
+  top: 2%;
+  width: 75%; /* Match the width of the container */
+  height: 95%; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure it doesn't overflow the container */
+  position: relative; /* Ensure the Lottie animation can overlay */
+  border-radius: 20px; /* Add rounded corners */
+  object-fit: cover; /* Ensure proper fit within the container */
 
-  @media (max-width: 768px) {
-    width: 110vw; /* Adjust width for smaller screens */
-    height: 105vw;
-    border-radius: 0.8rem;
+  @media (min-width: 1440px) {
+    width: clamp(30%, 40vw, 72%); /* Match the container width */
+    height: 75%; /* Match the container height */
+    top: 1.5%;
   }
 `;
 
@@ -869,13 +872,9 @@ const LottieAnimation = styled(Player)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30vw;
-  max-width: 400px;
-  height: auto;
-
-  @media (max-width: 768px) {
-    width: 80vw; /* Adjust size for smaller screens */
-  }
+  width: clamp(300px, 30vw, 400px); /* Responsive width */
+  height: clamp(300px, 30vh, 400px); /* Responsive height */
+  pointer-events: none; /* Prevent interaction with the animation */
 `;
 
 const Layout = () => {
@@ -944,26 +943,30 @@ const Layout = () => {
 
       {/* Horizontal Lines */}
       <HorizontalLine style={{ top: "13%" }} />
-      <HorizontalLine2 style={{ bottom: "-10%" }} />
+      <HorizontalLine style={{ bottom: "10%" }} />
 
       {/* Vertical Lines */}
-      <FirstVerticalLine style={{ left: `calc(50% - ${gap}px)` }} />
-      <VerticalLine style={{ top: "13%", left: `calc(50% + ${gap}px)` }} />
+      {/* <FirstVerticalLine style={{ left: `calc(50% - ${gap}px)` }} />
+      <VerticalLine style={{ top: "13%", left: `calc(50% + ${gap}px)` }} /> */}
 
       {/* Plus Icons */}
       <PlusIcon className="left">+</PlusIcon>
       <PlusIcon className="right">+</PlusIcon>
 
       {/* Centered Image and Lottie Animation */}
-      <CenteredContainer>
-        <CenteredImage src={bgImage} alt="Animation Background" />
-        <LottieAnimation
-          autoplay
-          loop
-          src={heroLottie} // Use the imported JSON
-          speed={1} // Adjust speed
-        />
-      </CenteredContainer>
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <CenteredContainer>
+          <CenteredImage src={bgImage} alt="Animation Background" />
+          <LottieAnimation
+            autoplay
+            loop
+            src={heroLottie} // Use the imported JSON
+            speed={1} // Adjust speed
+          />
+        </CenteredContainer>
+        <LeftLine style={{ height: "100%" }} />
+        <RightLine style={{ height: "90%" }} />
+      </div>
 
       {/* Bottom Left Text */}
       <BottomText># not a dating app</BottomText>
