@@ -2,6 +2,23 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamBurgerMenu";
+import Coffee from "../assets/faq/Coffee.png";
+import Concerts from "../assets/faq/Concerts.png";
+import Cultural from "../assets/faq/Cultural.png";
+import Events from "../assets/faq/Events.png";
+import Fitness from "../assets/faq/Fitness.png";
+import Games from "../assets/faq/Games.png";
+import Mindfulness from "../assets/faq/Mindfulness.png";
+import Movie from "../assets/faq/Movie.png";
+import Nightlife from "../assets/faq/Nightlife.png";
+import Outdoor from "../assets/faq/Outdoor.png";
+import Restaurants from "../assets/faq/Restaurants.png";
+import Shopping from "../assets/faq/Shopping.png";
+import Sports from "../assets/faq/Sports.png";
+import Tech from "../assets/faq/Tech.png";
+import Volunteering from "../assets/faq/Volunteering.png";
+import Workshops from "../assets/faq/Workshops.png";
+import wanderlyLogo from "../assets/wanderly.png";
 
 const Page = styled.div`
   position: relative;
@@ -288,22 +305,22 @@ const FAQScreen = () => {
   );
 
   const images = [
-    "/src/assets/faq/Coffee.png",
-    "/src/assets/faq/Concerts.png",
-    "/src/assets/faq/Cultural.png",
-    "/src/assets/faq/Events.png",
-    "/src/assets/faq/Fitness.png",
-    "/src/assets/faq/Games.png",
-    "/src/assets/faq/Mindfulness.png",
-    "/src/assets/faq/Movie.png",
-    "/src/assets/faq/Nightlife.png",
-    "/src/assets/faq/Outdoor.png",
-    "/src/assets/faq/Restaurants.png",
-    "/src/assets/faq/Shopping.png",
-    "/src/assets/faq/Sports.png",
-    "/src/assets/faq/Tech.png",
-    "/src/assets/faq/Volunteering.png",
-    "/src/assets/faq/Workshops.png",
+    Coffee,
+    Concerts,
+    Cultural,
+    Events,
+    Fitness,
+    Games,
+    Mindfulness,
+    Movie,
+    Nightlife,
+    Outdoor,
+    Restaurants,
+    Shopping,
+    Sports,
+    Tech,
+    Volunteering,
+    Workshops,
   ];
 
   const faqs = [
@@ -377,7 +394,7 @@ const FAQScreen = () => {
     <Page>
       <HamburgerMenu />
       <Logo
-        src="/src/assets/wanderly1.png"
+        src={wanderlyLogo}
         alt="Wanderly Logo"
         onClick={() => navigate("/")}
       />

@@ -1,18 +1,3 @@
-// import React from "react";
-// import GlobalStyles from "./components/GlobalStyles";
-// import Layout from "./components/Layout";
-
-// const App = () => {
-//   return (
-//     <>
-//       <GlobalStyles />
-//       <Layout />
-//     </>
-//   );
-// };
-
-// export default App;
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./components/GlobalStyles";

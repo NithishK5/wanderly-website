@@ -1,30 +1,3 @@
-// import React from "react";
-// import Lottie from "lottie-react";
-// import styled from "styled-components";
-// import heroLottie from "../assets/lottie/heroLottie.json"; // Replace with your animation path
-
-// const Container = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 25vh;
-//   background: black;
-// `;
-
-// const FeatureLottie = () => {
-//   return (
-//     <Container>
-//       <Lottie
-//         animationData={heroLottie}
-//         loop
-//         style={{ width: 200, height: 200 }}
-//       />
-//     </Container>
-//   );
-// };
-
-// export default FeatureLottie;
-
 import React from "react";
 import Lottie from "lottie-react";
 import styled from "styled-components";

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useNavigate } from "react-router-dom";
+import menuBg from "../assets/menuBg.png";
+import wanderlyLogo from "../assets/wanderly.png";
+import bgImage from "../assets/bg.png";
+import heroLottie from "../assets/lottie/heroLottie.json";
 
 // Animation for the overlay sliding down
 const slideDown = keyframes`
@@ -217,7 +221,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9;
-  background-image: url("/src/assets/menuBg3.png");
+  background-image: url(${menuBg}); /* Use the imported image */
   background-size: cover;
   background-position: center;
   animation: ${({ animationState }) =>
@@ -373,7 +377,7 @@ const Layout = () => {
       {menuOpen || animationState === "close" ? (
         <Overlay animationState={animationState}>
           <MenuContent>
-            <MenuLogo src="/src/assets/wanderly1.png" alt="Wanderly Logo" />
+            <MenuLogo src={wanderlyLogo} alt="Wanderly Logo" />
             <div>#coming soon</div>
             <div>not a dating app</div>
             {/* Add buttons inside the menu for mobile */}
@@ -401,7 +405,7 @@ const Layout = () => {
       ) : null}
 
       {/* App Name Image */}
-      <AppNameImage src="/src/assets/Wanderly1.png" alt="App Name" />
+      <AppNameImage src={wanderlyLogo} alt="App Name" />
 
       {/* Horizontal Lines */}
       <HorizontalLine style={{ top: "13%" }} />
@@ -417,11 +421,11 @@ const Layout = () => {
 
       {/* Centered Image and Lottie Animation */}
       <CenteredContainer>
-        <CenteredImage src="/src/assets/bg4.png" alt="Animation Background" />
+        <CenteredImage src={bgImage} alt="Animation Background" />
         <LottieAnimation
           autoplay
           loop
-          src="/src/assets/lottie/heroLottie2.json" // Path to your Lottie JSON file
+          src={heroLottie} // Use the imported JSON
           speed={1} // Adjust speed
         />
       </CenteredContainer>

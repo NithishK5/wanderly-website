@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
+import menuBg from "../assets/menuBg.png";
 
 const slideDown = keyframes`
   from { transform: translateY(-100%); }
@@ -60,7 +61,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9;
-  background-image: url("/src/assets/menuBg3.png");
+  background-image: url(${menuBg}); /* Use the imported image */
   background-size: cover;
   background-position: center;
   animation: ${({ animationState }) =>
