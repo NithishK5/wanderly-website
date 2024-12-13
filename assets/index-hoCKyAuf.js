@@ -476,7 +476,7 @@ PERFORMANCE OF THIS SOFTWARE.
   @media (max-width: 768px) {
     display: none;
   }
-`,Arrow=dt.div`
+`;dt.div`
   width: 20px;
   height: 2px;
   background: #d6d6d6; /* Arrow color */
@@ -500,7 +500,7 @@ PERFORMANCE OF THIS SOFTWARE.
   @media (max-width: 768px) {
     display: none;
   }
-`,BottomText3=dt.div`
+`;const BottomText3=dt.div`
   position: absolute;
   bottom: 3%;
   right: 5%;
@@ -564,14 +564,14 @@ PERFORMANCE OF THIS SOFTWARE.
   }
 `,HamburgerButton$1=dt.div`
   position: absolute;
-  top: clamp(2%, 4vh, 4%); /* Responsive vertical position */
-  left: clamp(2%, 4vw, 4%); /* Responsive horizontal position */
+  top: clamp(2%, 4.5vh, 8%); /* Responsive vertical position */
+  left: clamp(2%, 2.5vw, 4%); /* Responsive horizontal position */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: clamp(4px, 1vh, 6px); /* Responsive gap */
+  gap: clamp(4px, 1vh, 5px); /* Responsive gap */
   z-index: 10;
 
   /* Hide on larger screens */
@@ -683,11 +683,11 @@ PERFORMANCE OF THIS SOFTWARE.
   transform: translateX(-100%); /* Ensure it sticks to the left side */
 
   @media (max-width: 768px) {
-    left: 18%; /* Adjust the position for smaller screens */
+    left: 14%; /* Adjust the position for smaller screens */
   }
 
   @media (min-width: 1440px) {
-    left: 35%; /* Adjust for ultra-wide screens */
+    left: 38%; /* Adjust for ultra-wide screens */
     top: 13%;
   }
 `,RightLine=dt(Line)`
@@ -699,12 +699,12 @@ PERFORMANCE OF THIS SOFTWARE.
   transform: translateX(100%); /* Ensure it sticks to the right side */
 
   @media (max-width: 768px) {
-    right: clamp(15%, 18vw, 18%); /* Ensure dynamic scaling */
+    right: clamp(10%, 18vw, 14%); /* Ensure dynamic scaling */
     top: clamp(10%, 13vh, 13%); /* Keep top position responsive */
   }
 
   @media (min-width: 1440px) {
-    right: clamp(15%, 35vw, 35%);
+    right: 38%;
     top: clamp(10%, 13vh, 13%); /* Keep top position responsive */
   }
 `,CenteredContainer=dt.div`
@@ -725,16 +725,16 @@ PERFORMANCE OF THIS SOFTWARE.
   }
 `,CenteredImage=dt.img`
   top: 2%;
-  width: 75%; /* Match the width of the container */
-  height: 95%; /* Maintain aspect ratio */
+  width: 80%; /* Match the width of the container */
+  height: 90%; /* Maintain aspect ratio */
   max-height: 100%; /* Ensure it doesn't overflow the container */
   position: relative; /* Ensure the Lottie animation can overlay */
   border-radius: 20px; /* Add rounded corners */
   object-fit: cover; /* Ensure proper fit within the container */
 
   @media (min-width: 1440px) {
-    width: clamp(30%, 40vw, 72%); /* Match the container width */
-    height: 75%; /* Match the container height */
+    width: clamp(30%, 40vw, 55%); /* Match the container width */
+    height: 70%; /* Match the container height */
     top: 1.5%;
   }
 `,LottieAnimation=dt(Player)`
@@ -742,10 +742,20 @@ PERFORMANCE OF THIS SOFTWARE.
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 30vw, 400px); /* Responsive width */
-  height: clamp(300px, 30vh, 400px); /* Responsive height */
+  width: 200px; /* Default width for mobile */
+  height: 200px; /* Default height for mobile */
   pointer-events: none; /* Prevent interaction with the animation */
-`,Layout=()=>{const[e,t]=reactExports.useState(!1),n=useNavigate(),[a,s]=reactExports.useState(null),u=()=>{e?(s("close"),setTimeout(()=>{t(!1),s(null)},500)):(t(!0),s("open"))};return jsxRuntimeExports.jsxs(Page$1,{children:[jsxRuntimeExports.jsxs(HamburgerButton$1,{isOpen:e,onClick:u,children:[jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:e}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:e}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:e})]}),e||a==="close"?jsxRuntimeExports.jsx(Overlay$1,{animationState:a,children:jsxRuntimeExports.jsxs(MenuContent$1,{children:[jsxRuntimeExports.jsx(MenuLogo,{src:wanderlyLogo,alt:"Wanderly Logo"}),jsxRuntimeExports.jsx("div",{children:"#coming soon"}),jsxRuntimeExports.jsx("div",{children:"not a dating app"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"dm-us",onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"faq",onClick:()=>{u(),n("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(FooterText$2,{children:"Wanderly - All Rights Reserved"})]})}):null,jsxRuntimeExports.jsx(AppNameImage,{src:wanderlyLogo,alt:"App Name"}),jsxRuntimeExports.jsx(HorizontalLine,{style:{top:"13%"}}),jsxRuntimeExports.jsx(HorizontalLine,{style:{bottom:"10%"}}),jsxRuntimeExports.jsx(PlusIcon,{className:"left",children:"+"}),jsxRuntimeExports.jsx(PlusIcon,{className:"right",children:"+"}),jsxRuntimeExports.jsxs("div",{style:{position:"relative",width:"100%",height:"100%"},children:[jsxRuntimeExports.jsxs(CenteredContainer,{children:[jsxRuntimeExports.jsx(CenteredImage,{src:bgImage,alt:"Animation Background"}),jsxRuntimeExports.jsx(LottieAnimation,{autoplay:!0,loop:!0,src:heroLottie,speed:1})]}),jsxRuntimeExports.jsx(LeftLine,{style:{height:"100%"}}),jsxRuntimeExports.jsx(RightLine,{style:{height:"90%"}})]}),jsxRuntimeExports.jsx(BottomText,{children:"# not a dating app"}),jsxRuntimeExports.jsx(BottomText2,{children:"WANDERLY - ALL RIGHTS RESERVED"}),jsxRuntimeExports.jsx(Arrow,{}),jsxRuntimeExports.jsx(BottomText3,{children:"Coming Soon!"}),jsxRuntimeExports.jsxs(ButtonContainer,{children:[jsxRuntimeExports.jsx(Button,{onClick:()=>{n("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(Button,{onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"})]})]})},slideDown=mt`
+
+  @media (min-width: 768px) {
+    width: 30vw; /* Adjust width for tablet and larger screens */
+    height: 30vh; /* Adjust height for tablet and larger screens */
+  }
+
+  @media (min-width: 1440px) {
+    width: 300px; /* Fixed width for ultra-wide screens */
+    height: 300px; /* Fixed height for ultra-wide screens */
+  }
+`,Layout=()=>{const[e,t]=reactExports.useState(!1),n=useNavigate(),[a,s]=reactExports.useState(null),u=()=>{e?(s("close"),setTimeout(()=>{t(!1),s(null)},500)):(t(!0),s("open"))};return jsxRuntimeExports.jsxs(Page$1,{children:[jsxRuntimeExports.jsxs(HamburgerButton$1,{isOpen:e,onClick:u,children:[jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:e}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:e}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:e})]}),e||a==="close"?jsxRuntimeExports.jsx(Overlay$1,{animationState:a,children:jsxRuntimeExports.jsxs(MenuContent$1,{children:[jsxRuntimeExports.jsx(MenuLogo,{src:wanderlyLogo,alt:"Wanderly Logo"}),jsxRuntimeExports.jsx("div",{children:"#coming soon"}),jsxRuntimeExports.jsx("div",{children:"not a dating app"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"dm-us",onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"faq",onClick:()=>{u(),n("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(FooterText$2,{children:"Wanderly - All Rights Reserved"})]})}):null,jsxRuntimeExports.jsx(AppNameImage,{src:wanderlyLogo,alt:"App Name"}),jsxRuntimeExports.jsx(HorizontalLine,{style:{top:"13%"}}),jsxRuntimeExports.jsx(HorizontalLine,{style:{bottom:"10%"}}),jsxRuntimeExports.jsx(PlusIcon,{className:"left",children:"+"}),jsxRuntimeExports.jsx(PlusIcon,{className:"right",children:"+"}),jsxRuntimeExports.jsxs("div",{style:{position:"relative",width:"100%",height:"100%"},children:[jsxRuntimeExports.jsxs(CenteredContainer,{children:[jsxRuntimeExports.jsx(CenteredImage,{src:bgImage,alt:"Animation Background"}),jsxRuntimeExports.jsx(LottieAnimation,{autoplay:!0,loop:!0,src:heroLottie,speed:1})]}),jsxRuntimeExports.jsx(LeftLine,{style:{height:"100%"}}),jsxRuntimeExports.jsx(RightLine,{style:{height:"90%"}})]}),jsxRuntimeExports.jsx(BottomText,{children:"# not a dating app"}),jsxRuntimeExports.jsx(BottomText2,{children:"WANDERLY - ALL RIGHTS RESERVED"}),jsxRuntimeExports.jsx(BottomText3,{children:"Coming Soon!"}),jsxRuntimeExports.jsxs(ButtonContainer,{children:[jsxRuntimeExports.jsx(Button,{onClick:()=>{n("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(Button,{onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"})]})]})},slideDown=mt`
   from { transform: translateY(-100%); }
   to { transform: translateY(0); }
 `,slideUp=mt`
