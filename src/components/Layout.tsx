@@ -669,14 +669,14 @@ const CloseIcon = styled.div`
 
 const HamburgerButton = styled.div`
   position: absolute;
-  top: clamp(2%, 4vh, 4%); /* Responsive vertical position */
-  left: clamp(2%, 4vw, 4%); /* Responsive horizontal position */
+  top: clamp(2%, 4.5vh, 8%); /* Responsive vertical position */
+  left: clamp(2%, 2.5vw, 4%); /* Responsive horizontal position */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: clamp(4px, 1vh, 6px); /* Responsive gap */
+  gap: clamp(4px, 1vh, 5px); /* Responsive gap */
   z-index: 10;
 
   /* Hide on larger screens */
@@ -803,11 +803,11 @@ const LeftLine = styled(Line)`
   transform: translateX(-100%); /* Ensure it sticks to the left side */
 
   @media (max-width: 768px) {
-    left: 18%; /* Adjust the position for smaller screens */
+    left: 14%; /* Adjust the position for smaller screens */
   }
 
   @media (min-width: 1440px) {
-    left: 35%; /* Adjust for ultra-wide screens */
+    left: 38%; /* Adjust for ultra-wide screens */
     top: 13%;
   }
 `;
@@ -821,12 +821,12 @@ const RightLine = styled(Line)`
   transform: translateX(100%); /* Ensure it sticks to the right side */
 
   @media (max-width: 768px) {
-    right: clamp(15%, 18vw, 18%); /* Ensure dynamic scaling */
+    right: clamp(10%, 18vw, 14%); /* Ensure dynamic scaling */
     top: clamp(10%, 13vh, 13%); /* Keep top position responsive */
   }
 
   @media (min-width: 1440px) {
-    right: clamp(15%, 35vw, 35%);
+    right: 38%;
     top: clamp(10%, 13vh, 13%); /* Keep top position responsive */
   }
 `;
@@ -851,16 +851,16 @@ const CenteredContainer = styled.div`
 
 const CenteredImage = styled.img`
   top: 2%;
-  width: 75%; /* Match the width of the container */
-  height: 95%; /* Maintain aspect ratio */
+  width: 80%; /* Match the width of the container */
+  height: 90%; /* Maintain aspect ratio */
   max-height: 100%; /* Ensure it doesn't overflow the container */
   position: relative; /* Ensure the Lottie animation can overlay */
   border-radius: 20px; /* Add rounded corners */
   object-fit: cover; /* Ensure proper fit within the container */
 
   @media (min-width: 1440px) {
-    width: clamp(30%, 40vw, 72%); /* Match the container width */
-    height: 75%; /* Match the container height */
+    width: clamp(30%, 40vw, 55%); /* Match the container width */
+    height: 70%; /* Match the container height */
     top: 1.5%;
   }
 `;
@@ -870,9 +870,19 @@ const LottieAnimation = styled(Player)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 30vw, 400px); /* Responsive width */
-  height: clamp(300px, 30vh, 400px); /* Responsive height */
+  width: 200px; /* Default width for mobile */
+  height: 200px; /* Default height for mobile */
   pointer-events: none; /* Prevent interaction with the animation */
+
+  @media (min-width: 768px) {
+    width: 30vw; /* Adjust width for tablet and larger screens */
+    height: 30vh; /* Adjust height for tablet and larger screens */
+  }
+
+  @media (min-width: 1440px) {
+    width: 300px; /* Fixed width for ultra-wide screens */
+    height: 300px; /* Fixed height for ultra-wide screens */
+  }
 `;
 
 const Layout = () => {
@@ -969,7 +979,7 @@ const Layout = () => {
       {/* Bottom Left Text */}
       <BottomText># not a dating app</BottomText>
       <BottomText2>WANDERLY - ALL RIGHTS RESERVED</BottomText2>
-      <Arrow />
+      {/* <Arrow /> */}
       <BottomText3>Coming Soon!</BottomText3>
 
       {/* Buttons */}
