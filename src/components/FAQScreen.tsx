@@ -456,7 +456,7 @@ const FAQScreen = () => {
           <FooterButton
             onClick={() => {
               window.location.href =
-                "mailto:your-email@example.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly.";
+                "mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly.";
             }}
           >
             DM US
