@@ -391,7 +391,6 @@ PERFORMANCE OF THIS SOFTWARE.
   overflow-x: hidden;
   overflow-y: hidden;
 
-  /* Adjust padding for smaller screens */
   @media (max-width: 768px) {
     padding: 20px;
   }
@@ -400,60 +399,59 @@ PERFORMANCE OF THIS SOFTWARE.
   background: #565658; /* Line color */
   z-index: 1; /* Ensure the lines are visible above background elements */
 `,HorizontalLine=dt(Line)`
-  height: 0.5px;
+  height: clamp(0.5px, 0.3vh, 2px);
   width: 100%;
-  top: 50%; /* Center the horizontal line */
-  transform: translateY(-50%); /* Adjust for proper centering */
-
-  @media (max-width: 768px) {
-    width: 100%; /* Keep full width for smaller screens */
-    top: 50%;
-  }
+  top: 50%;
+  transform: translateY(-50%);
 `,HorizontalLine2=dt(Line)`
-  height: 0.5px;
+  height: clamp(0.5px, 0.3vh, 2px);
   width: 100%;
-  top: 90%; /* Center the horizontal line */
-  transform: translateY(-50%); /* Adjust for proper centering */
-
-  @media (max-width: 768px) {
-    width: 100%; /* Keep full width for smaller screens */
-    top: 90%;
-  }
+  top: 90%;
+  transform: translateY(-50%);
 `,FirstVerticalLine=dt(Line)`
-  width: 0.5px;
-  height: 88%; /* Default height */
-  top: 13%; /* Position 5% from the top */
-  left: 25%; /* Offset to the left for spacing */
-  transform: translateX(-50%); /* Adjust for proper centering */
+  width: clamp(0.5px, 0.3vw, 2px);
+  height: 88%;
+  top: 13%;
+  left: 25%;
+  transform: translateX(-50%);
 
   @media (max-width: 768px) {
-    height: 100%; /* Extend to full height for smaller screens */
-    top: 0; /* Align to the very top */
-    left: 20%; /* Adjust for smaller screens */
+    height: 100%;
+    top: 0;
+    left: 20%;
   }
 `,VerticalLine=dt(Line)`
-  width: 0.5px;
-  height: 90%; /* Spans between top and bottom lines */
-  top: 5%; /* Align the vertical line */
-  left: 50%; /* Center the vertical line */
-  transform: translateX(-50%); /* Adjust for proper centering */
+  width: clamp(0.5px, 0.3vw, 2px);
+  height: 90%;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 
   @media (max-width: 768px) {
-    height: 100%; /* Extend to full height for smaller screens */
-    top: 0; /* Align to the very top */
+    height: 100%;
+    top: 0;
   }
 `,AppNameImage=dt.img`
   position: absolute;
-  top: -1%;
-  right: -0.8%;
-  width: 30vw; /* Adjust width relative to viewport */
-  max-width: 470px; /* Limit the max size */
+  top: 2%; /* Ensure some spacing from the top */
+  right: 2%; /* Position relative to the top-right corner */
+  width: clamp(
+    150px,
+    20vw,
+    470px
+  ); /* Dynamically scale between min and max width */
   height: auto; /* Maintain aspect ratio */
 
   @media (max-width: 768px) {
-    top: -1.5%;
-    right: -2%;
-    width: 100vw; /* Smaller width for smaller screens */
+    top: 1%; /* Slightly adjust for smaller screens */
+    right: 5%; /* Increase spacing on smaller screens */
+    width: 50vw; /* Scale width for smaller devices */
+  }
+
+  @media (max-width: 480px) {
+    top: 0; /* Remove top margin for very small screens */
+    right: 3%; /* Adjust spacing */
+    width: 60vw; /* Further reduce width for very small devices */
   }
 `,BottomText=dt.div`
   position: absolute;
