@@ -891,20 +891,40 @@ PERFORMANCE OF THIS SOFTWARE.
   padding: 0 20px;
   box-sizing: border-box; /* Include padding and border in width/height calculations */
 `,Logo=dt.img`
-  position: fixed; /* Change to fixed to stay on top */
-  top: 5%;
-  right: -0.5%;
-  transform: translateY(-50%);
-  width: 470px;
-  height: 150px;
+  position: fixed; /* Fixed to stay on top */
+  top: clamp(3%, 5vh, 8%); /* Match the responsive top position */
+  right: clamp(0.5%, 1vw, 2%); /* Match the responsive right position */
+  transform: translateY(-50%); /* Center the image vertically */
+  width: clamp(300px, 25vw, 770px); /* Responsive width for mobile as default */
+  height: clamp(
+    100px,
+    15vw,
+    300px
+  ); /* Responsive height for mobile as default */
   cursor: pointer;
   z-index: 1000; /* Ensure it stays above other elements */
+
+  /* Media query for larger screens */
+  @media (min-width: 1024px) {
+    width: clamp(500px, 30vw, 1200px); /* Adjust width for larger screens */
+    height: clamp(150px, 30vw, 100px); /* Adjust height for larger screens */
+  }
 `,ImageCarousel=dt.div`
   position: absolute;
-  bottom: 50%;
-  width: 100%;
+  bottom: 50%; /* Default vertical position for mobile */
+  width: 100%; /* Take full width */
   overflow: hidden;
-  height: 300px;
+  height: clamp(
+    200px,
+    30vh,
+    300px
+  ); /* Responsive height for mobile as default */
+
+  /* Media query for larger screens */
+  @media (min-width: 1024px) {
+    bottom: 45%; /* Adjust bottom positioning for larger screens */
+    height: clamp(300px, 40vh, 500px); /* Increase height for larger screens */
+  }
 `,moveRight=mt`
   0% { transform: translateX(0); }
   50% { transform: translateX(-100%); }
@@ -913,9 +933,18 @@ PERFORMANCE OF THIS SOFTWARE.
   display: flex;
   animation: ${moveRight} 20s linear infinite alternate;
 `,Image$1=dt.img`
-  height: 250px;
-  flex-shrink: 0;
-  width: auto;
+  height: clamp(
+    250px,
+    25vh,
+    300px
+  ); /* Responsive height with mobile as default */
+  flex-shrink: 0; /* Prevent shrinking */
+  width: auto; /* Maintain aspect ratio */
+
+  /* Media query for larger screens */
+  @media (min-width: 1024px) {
+    height: clamp(300px, 30vh, 400px); /* Increase height for larger screens */
+  }
 `,FAQContainer=dt.div`
   width: 100%;
   display: flex;
@@ -1011,10 +1040,21 @@ PERFORMANCE OF THIS SOFTWARE.
   position: relative;
   width: 100%;
   overflow: hidden; /* Hide overflowing text */
-  height: 50px;
+  height: clamp(40px, 5vh, 50px); /* Responsive height with mobile as default */
   display: flex;
   align-items: center;
   background-color: transparent;
+  margin-bottom: clamp(40px, 2vh, 50px); /* Add spacing below the text */
+
+  /* Media query for larger screens */
+  @media (min-width: 1024px) {
+    height: clamp(50px, 6vh, 70px); /* Increase height for larger screens */
+    margin-bottom: clamp(
+      20px,
+      3vh,
+      40px
+    ); /* Larger spacing below for desktop */
+  }
 `,moveText=mt`
   0% { transform: translateX(0); } /* Start at the beginning */
   50% { transform: translateX(-50%); } /* Move halfway, where it reverses */
