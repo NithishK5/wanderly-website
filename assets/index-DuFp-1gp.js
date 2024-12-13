@@ -393,27 +393,55 @@ PERFORMANCE OF THIS SOFTWARE.
 
   /* Adjust padding for smaller screens */
   @media (max-width: 768px) {
-    padding: 10px;
+    padding: 0px;
   }
 `,Line=dt.div`
   position: absolute;
   background: #565658; /* Line color */
+  z-index: 1; /* Ensure the lines are visible above background elements */
 `,HorizontalLine=dt(Line)`
   height: 0.5px;
   width: 100%;
+  top: 50%; /* Center the horizontal line */
+  transform: translateY(-50%); /* Adjust for proper centering */
+
+  @media (max-width: 768px) {
+    width: 100%; /* Keep full width for smaller screens */
+    top: 50%;
+  }
+`,HorizontalLine2=dt(Line)`
+  height: 0.5px;
+  width: 100%;
+  top: 90%; /* Center the horizontal line */
+  transform: translateY(-50%); /* Adjust for proper centering */
+
+  @media (max-width: 768px) {
+    width: 100%; /* Keep full width for smaller screens */
+    top: 90%;
+  }
 `,FirstVerticalLine=dt(Line)`
   width: 0.5px;
-  height: calc(90%); /* Default height */
-  top: 107px; /* Extend to the top */
+  height: 88%; /* Default height */
+  top: 13%; /* Position 5% from the top */
+  left: 25%; /* Offset to the left for spacing */
+  transform: translateX(-50%); /* Adjust for proper centering */
 
-  /* Increase height for smaller screens */
   @media (max-width: 768px) {
-    height: calc(100%);
-    top: 0; /* Extend to the top */
+    height: 100%; /* Extend to full height for smaller screens */
+    top: 0; /* Align to the very top */
+    left: 20%; /* Adjust for smaller screens */
   }
 `,VerticalLine=dt(Line)`
   width: 0.5px;
-  height: calc(90%); /* Spans between top and bottom lines */
+  height: 90%; /* Spans between top and bottom lines */
+  top: 5%; /* Align the vertical line */
+  left: 50%; /* Center the vertical line */
+  transform: translateX(-50%); /* Adjust for proper centering */
+
+  @media (max-width: 768px) {
+    height: 100%; /* Extend to full height for smaller screens */
+    top: 0; /* Align to the very top */
+  }
 `,AppNameImage=dt.img`
   position: absolute;
   top: -1%;
@@ -683,7 +711,7 @@ PERFORMANCE OF THIS SOFTWARE.
   @media (max-width: 768px) {
     width: 80vw; /* Adjust size for smaller screens */
   }
-`,Layout=()=>{const[t,n]=reactExports.useState(!1),a=useNavigate(),[s,u]=reactExports.useState(null),p=()=>{t?(u("close"),setTimeout(()=>{n(!1),u(null)},500)):(n(!0),u("open"))};return jsxRuntimeExports.jsxs(Page$1,{children:[jsxRuntimeExports.jsxs(HamburgerButton$1,{isOpen:t,onClick:p,children:[jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:t}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:t}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:t})]}),t||s==="close"?jsxRuntimeExports.jsx(Overlay$1,{animationState:s,children:jsxRuntimeExports.jsxs(MenuContent$1,{children:[jsxRuntimeExports.jsx(MenuLogo,{src:wanderlyLogo,alt:"Wanderly Logo"}),jsxRuntimeExports.jsx("div",{children:"#coming soon"}),jsxRuntimeExports.jsx("div",{children:"not a dating app"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"dm-us",onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"faq",onClick:()=>{p(),a("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(FooterText$2,{children:"Wanderly - All Rights Reserved"})]})}):null,jsxRuntimeExports.jsx(AppNameImage,{src:wanderlyLogo,alt:"App Name"}),jsxRuntimeExports.jsx(HorizontalLine,{style:{top:"13%"}}),jsxRuntimeExports.jsx(HorizontalLine,{style:{bottom:"10%"}}),jsxRuntimeExports.jsx(FirstVerticalLine,{style:{left:"calc(50% - 200px)"}}),jsxRuntimeExports.jsx(VerticalLine,{style:{top:"13%",left:"calc(50% + 200px)"}}),jsxRuntimeExports.jsx(PlusIcon,{className:"left",children:"+"}),jsxRuntimeExports.jsx(PlusIcon,{className:"right",children:"+"}),jsxRuntimeExports.jsxs(CenteredContainer,{children:[jsxRuntimeExports.jsx(CenteredImage,{src:bgImage,alt:"Animation Background"}),jsxRuntimeExports.jsx(LottieAnimation,{autoplay:!0,loop:!0,src:heroLottie,speed:1})]}),jsxRuntimeExports.jsx(BottomText,{children:"# not a dating app"}),jsxRuntimeExports.jsx(BottomText2,{children:"WANDERLY - ALL RIGHTS RESERVED"}),jsxRuntimeExports.jsx(Arrow,{}),jsxRuntimeExports.jsx(BottomText3,{children:"Coming Soon!"}),jsxRuntimeExports.jsxs(ButtonContainer,{children:[jsxRuntimeExports.jsx(Button,{onClick:()=>{a("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(Button,{onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"})]})]})},slideDown=mt`
+`,Layout=()=>{const[t,n]=reactExports.useState(!1),a=useNavigate(),[s,u]=reactExports.useState(null),p=()=>{t?(u("close"),setTimeout(()=>{n(!1),u(null)},500)):(n(!0),u("open"))};return jsxRuntimeExports.jsxs(Page$1,{children:[jsxRuntimeExports.jsxs(HamburgerButton$1,{isOpen:t,onClick:p,children:[jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:t}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:t}),jsxRuntimeExports.jsx(CloseIcon$1,{isOpen:t})]}),t||s==="close"?jsxRuntimeExports.jsx(Overlay$1,{animationState:s,children:jsxRuntimeExports.jsxs(MenuContent$1,{children:[jsxRuntimeExports.jsx(MenuLogo,{src:wanderlyLogo,alt:"Wanderly Logo"}),jsxRuntimeExports.jsx("div",{children:"#coming soon"}),jsxRuntimeExports.jsx("div",{children:"not a dating app"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"dm-us",onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"}),jsxRuntimeExports.jsx(MenuButton$1,{className:"faq",onClick:()=>{p(),a("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(FooterText$2,{children:"Wanderly - All Rights Reserved"})]})}):null,jsxRuntimeExports.jsx(AppNameImage,{src:wanderlyLogo,alt:"App Name"}),jsxRuntimeExports.jsx(HorizontalLine,{style:{top:"13%"}}),jsxRuntimeExports.jsx(HorizontalLine2,{style:{bottom:"-10%"}}),jsxRuntimeExports.jsx(FirstVerticalLine,{style:{left:"calc(50% - 200px)"}}),jsxRuntimeExports.jsx(VerticalLine,{style:{top:"13%",left:"calc(50% + 200px)"}}),jsxRuntimeExports.jsx(PlusIcon,{className:"left",children:"+"}),jsxRuntimeExports.jsx(PlusIcon,{className:"right",children:"+"}),jsxRuntimeExports.jsxs(CenteredContainer,{children:[jsxRuntimeExports.jsx(CenteredImage,{src:bgImage,alt:"Animation Background"}),jsxRuntimeExports.jsx(LottieAnimation,{autoplay:!0,loop:!0,src:heroLottie,speed:1})]}),jsxRuntimeExports.jsx(BottomText,{children:"# not a dating app"}),jsxRuntimeExports.jsx(BottomText2,{children:"WANDERLY - ALL RIGHTS RESERVED"}),jsxRuntimeExports.jsx(Arrow,{}),jsxRuntimeExports.jsx(BottomText3,{children:"Coming Soon!"}),jsxRuntimeExports.jsxs(ButtonContainer,{children:[jsxRuntimeExports.jsx(Button,{onClick:()=>{a("/faq")},children:"FAQ"}),jsxRuntimeExports.jsx(Button,{onClick:()=>{window.location.href="mailto:wanly.wanderly@gmail.com?subject=Contact%20Us&body=Hi%20there,%0A%0AI%20have%20a%20question%20about%20Wanderly."},children:"DM US"})]})]})},slideDown=mt`
   from { transform: translateY(-100%); }
   to { transform: translateY(0); }
 `,slideUp=mt`
