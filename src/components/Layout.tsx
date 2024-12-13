@@ -506,35 +506,65 @@ const Page = styled.div`
 
   /* Adjust padding for smaller screens */
   @media (max-width: 768px) {
-    padding: 10px;
+    padding: 0px;
   }
 `;
 
 const Line = styled.div`
   position: absolute;
   background: #565658; /* Line color */
+  z-index: 1; /* Ensure the lines are visible above background elements */
 `;
 
 const HorizontalLine = styled(Line)`
   height: 0.5px;
   width: 100%;
+  top: 50%; /* Center the horizontal line */
+  transform: translateY(-50%); /* Adjust for proper centering */
+
+  @media (max-width: 768px) {
+    width: 100%; /* Keep full width for smaller screens */
+    top: 50%;
+  }
+`;
+
+const HorizontalLine2 = styled(Line)`
+  height: 0.5px;
+  width: 100%;
+  top: 90%; /* Center the horizontal line */
+  transform: translateY(-50%); /* Adjust for proper centering */
+
+  @media (max-width: 768px) {
+    width: 100%; /* Keep full width for smaller screens */
+    top: 90%;
+  }
 `;
 
 const FirstVerticalLine = styled(Line)`
   width: 0.5px;
-  height: calc(90%); /* Default height */
-  top: 107px; /* Extend to the top */
+  height: 88%; /* Default height */
+  top: 13%; /* Position 5% from the top */
+  left: 25%; /* Offset to the left for spacing */
+  transform: translateX(-50%); /* Adjust for proper centering */
 
-  /* Increase height for smaller screens */
   @media (max-width: 768px) {
-    height: calc(100%);
-    top: 0; /* Extend to the top */
+    height: 100%; /* Extend to full height for smaller screens */
+    top: 0; /* Align to the very top */
+    left: 20%; /* Adjust for smaller screens */
   }
 `;
 
 const VerticalLine = styled(Line)`
   width: 0.5px;
-  height: calc(90%); /* Spans between top and bottom lines */
+  height: 90%; /* Spans between top and bottom lines */
+  top: 5%; /* Align the vertical line */
+  left: 50%; /* Center the vertical line */
+  transform: translateX(-50%); /* Adjust for proper centering */
+
+  @media (max-width: 768px) {
+    height: 100%; /* Extend to full height for smaller screens */
+    top: 0; /* Align to the very top */
+  }
 `;
 
 const AppNameImage = styled.img`
@@ -914,7 +944,7 @@ const Layout = () => {
 
       {/* Horizontal Lines */}
       <HorizontalLine style={{ top: "13%" }} />
-      <HorizontalLine style={{ bottom: "10%" }} />
+      <HorizontalLine2 style={{ bottom: "-10%" }} />
 
       {/* Vertical Lines */}
       <FirstVerticalLine style={{ left: `calc(50% - ${gap}px)` }} />
