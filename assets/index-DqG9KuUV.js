@@ -399,37 +399,41 @@ PERFORMANCE OF THIS SOFTWARE.
   background: #565658; /* Line color */
   z-index: 1; /* Ensure the lines are visible above background elements */
 `,HorizontalLine=dt(Line)`
-  height: clamp(0.5px, 0.3vh, 2px);
-  width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
+  height: clamp(
+    1px,
+    0.5vh,
+    3px
+  ); /* Dynamic height with clamp for better scaling */
+  width: 100%; /* Full width */
+  top: 50%; /* Center the line vertically */
+  transform: translateY(-50%); /* Proper centering for different screen sizes */
 `,HorizontalLine2=dt(Line)`
-  height: clamp(0.5px, 0.3vh, 2px);
-  width: 100%;
-  top: 90%;
-  transform: translateY(-50%);
+  height: clamp(1px, 0.5vh, 3px); /* Dynamic height */
+  width: 100%; /* Full width */
+  top: 90%; /* Position at 90% of the height */
+  transform: translateY(-50%); /* Center it properly */
 `,FirstVerticalLine=dt(Line)`
-  width: clamp(0.5px, 0.3vw, 2px);
-  height: 88%;
-  top: 13%;
-  left: 25%;
-  transform: translateX(-50%);
+  width: clamp(1px, 0.5vw, 3px); /* Dynamic width for responsiveness */
+  height: 88%; /* Default height */
+  top: 13%; /* Offset from the top */
+  left: 25%; /* Positioned at 25% horizontally */
+  transform: translateX(-50%); /* Center it correctly */
 
   @media (max-width: 768px) {
-    height: 100%;
-    top: 0;
-    left: 20%;
+    height: 100%; /* Full height for smaller screens */
+    top: 0; /* Start from the top */
+    left: 20%; /* Adjust horizontal position */
   }
 `,VerticalLine=dt(Line)`
-  width: clamp(0.5px, 0.3vw, 2px);
-  height: 90%;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
+  width: clamp(1px, 0.5vw, 3px); /* Dynamic width */
+  height: 90%; /* Default height spanning 90% */
+  top: 5%; /* Offset vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Proper alignment */
 
   @media (max-width: 768px) {
-    height: 100%;
-    top: 0;
+    height: 100%; /* Full height for smaller screens */
+    top: 0; /* Start from the top */
   }
 `,AppNameImage=dt.img`
   position: absolute;
