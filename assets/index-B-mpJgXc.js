@@ -393,7 +393,7 @@ PERFORMANCE OF THIS SOFTWARE.
 
   /* Adjust padding for smaller screens */
   @media (max-width: 768px) {
-    padding: 0px;
+    padding: 20px;
   }
 `,Line=dt.div`
   position: absolute;
