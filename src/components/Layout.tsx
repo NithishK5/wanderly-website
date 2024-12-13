@@ -217,7 +217,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9;
-  background-image: url("./assets/menuBg3.png");
+  background-image: url("/src/assets/menuBg3.png");
   background-size: cover;
   background-position: center;
   animation: ${({ animationState }) =>
@@ -373,7 +373,7 @@ const Layout = () => {
       {menuOpen || animationState === "close" ? (
         <Overlay animationState={animationState}>
           <MenuContent>
-            <MenuLogo src="./assets/wanderly1.png" alt="Wanderly Logo" />
+            <MenuLogo src="/src/assets/wanderly1.png" alt="Wanderly Logo" />
             <div>#coming soon</div>
             <div>not a dating app</div>
             {/* Add buttons inside the menu for mobile */}
@@ -401,10 +401,7 @@ const Layout = () => {
       ) : null}
 
       {/* App Name Image */}
-      <AppNameImage
-        src="/wanderly-website/src/assets/Wanderly1.png"
-        alt="App Name"
-      />
+      <AppNameImage src="/src/assets/Wanderly1.png" alt="App Name" />
 
       {/* Horizontal Lines */}
       <HorizontalLine style={{ top: "13%" }} />
@@ -420,11 +417,11 @@ const Layout = () => {
 
       {/* Centered Image and Lottie Animation */}
       <CenteredContainer>
-        <CenteredImage src="./assets/bg4.png" alt="Animation Background" />
+        <CenteredImage src="/src/assets/bg4.png" alt="Animation Background" />
         <LottieAnimation
           autoplay
           loop
-          src="./assets/lottie/heroLottie2.json" // Path to your Lottie JSON file
+          src="/src/assets/lottie/heroLottie2.json" // Path to your Lottie JSON file
           speed={1} // Adjust speed
         />
       </CenteredContainer>

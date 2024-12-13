@@ -288,22 +288,22 @@ const FAQScreen = () => {
   );
 
   const images = [
-    "./assets/faq/Coffee.png",
-    "./assets/faq/Concerts.png",
-    "./assets/faq/Cultural.png",
-    "./assets/faq/Events.png",
-    "./assets/faq/Fitness.png",
-    "./assets/faq/Games.png",
-    "./assets/faq/Mindfulness.png",
-    "./assets/faq/Movie.png",
-    "./assets/faq/Nightlife.png",
-    "./assets/faq/Outdoor.png",
-    "./assets/faq/Restaurants.png",
-    "./assets/faq/Shopping.png",
-    "./assets/faq/Sports.png",
-    "./assets/faq/Tech.png",
-    "./assets/faq/Volunteering.png",
-    "./assets/faq/Workshops.png",
+    "/src/assets/faq/Coffee.png",
+    "/src/assets/faq/Concerts.png",
+    "/src/assets/faq/Cultural.png",
+    "/src/assets/faq/Events.png",
+    "/src/assets/faq/Fitness.png",
+    "/src/assets/faq/Games.png",
+    "/src/assets/faq/Mindfulness.png",
+    "/src/assets/faq/Movie.png",
+    "/src/assets/faq/Nightlife.png",
+    "/src/assets/faq/Outdoor.png",
+    "/src/assets/faq/Restaurants.png",
+    "/src/assets/faq/Shopping.png",
+    "/src/assets/faq/Sports.png",
+    "/src/assets/faq/Tech.png",
+    "/src/assets/faq/Volunteering.png",
+    "/src/assets/faq/Workshops.png",
   ];
 
   const faqs = [
@@ -377,7 +377,7 @@ const FAQScreen = () => {
     <Page>
       <HamburgerMenu />
       <Logo
-        src="./assets/wanderly1.png"
+        src="/src/assets/wanderly1.png"
         alt="Wanderly Logo"
         onClick={() => navigate("/")}
       />

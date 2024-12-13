@@ -60,7 +60,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9;
-  background-image: url("./assets/menuBg3.png");
+  background-image: url("/src/assets/menuBg3.png");
   background-size: cover;
   background-position: center;
   animation: ${({ animationState }) =>
